@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, computed } from "vue";
 import type { Ref } from "vue";
-import axios from "axios";
+// import axios from "axios";
 
 interface Article {
   id: number;
@@ -12,12 +12,12 @@ interface Article {
 const allArticles: Ref<Article[]> = ref([]);
 const page: Ref<number> = ref(1);
 
-const getArticles = async () => {
-  const res = await axios.get(
-    "https://6082e3545dbd2c001757abf5.mockapi.io/qtim-test-work/posts/"
-  );
-  allArticles.value = res.data;
-};
+// const getArticles = async () => {
+//   const res = await axios.get(
+//     "https://6082e3545dbd2c001757abf5.mockapi.io/qtim-test-work/posts/"
+//   );
+//   allArticles.value = res.data;
+// };
 
 const currentArticles = computed(() => {
   return allArticles.value.filter((article, index) => {
@@ -32,9 +32,9 @@ const allPages = computed((): number => {
   } else return 0;
 });
 
-onMounted(async () => {
-  await getArticles();
-});
+// onMounted(async () => {
+//   await getArticles();
+// });
 </script>
 
 <template>
