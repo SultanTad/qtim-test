@@ -5,9 +5,9 @@ import axios from "axios";
 import { useRoute } from "vue-router";
 
 interface Article {
-  title: string;
-  image: string;
-  description: string;
+  title?: string;
+  image?: string;
+  description?: string;
 }
 
 const route = useRoute();
